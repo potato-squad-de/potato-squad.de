@@ -64,4 +64,5 @@ git-tag:
 
 .PHONY: push-tag
 push-tag:
+	@git push --delete origin $(TAG)
 	@git push origin $(TAG)
