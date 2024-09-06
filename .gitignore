@@ -1,0 +1,8 @@
+node_modules/
+
+tmp/
+dist/
+
+.env
+web/static/*.js
+web/static/*.css
