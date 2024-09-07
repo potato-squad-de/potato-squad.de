@@ -48,5 +48,5 @@ changelog:
 
 dockers:
     - image_templates:
-          - 'ghcr.io/potato-squad-org/{{ .ProjectName }}:latest'
-          - 'ghcr.io/potato-squad-org/{{ .ProjectName }}:{{ .Tag }}'
+          - 'ghcr.io/potato-squad-de/potato-squad.de:latest'
+          - 'ghcr.io/potato-squad-de/potato-squad.de:{{ .Tag }}'
