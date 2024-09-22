@@ -1,9 +1,8 @@
-FROM alpine:latest as runner
-WORKDIR /root/
-COPY site /usr/bin/
-ENTRYPOINT ["site", "run"]
+FROM oven/bun:latest AS builder
+WORKDIR /app
+COPY . .
+RUN bun install && bun run build
 
-ENV PORT=80
-ENV DISCORD_INVITE_URL=
-
-EXPOSE ${PORT}
+FROM caddy:latest AS runner
+COPY --from=builder /app/build /srv
+ENTRYPOINT [ "caddy", "file-server", "--root", "/srv" ]
