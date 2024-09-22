@@ -1,0 +1,7 @@
+services:
+  potato-squad.de:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 80:80

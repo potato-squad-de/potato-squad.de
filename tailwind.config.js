@@ -1,14 +1,14 @@
-import { addDynamicIconSelectors } from "@iconify/tailwind"
+import { addDynamicIconSelectors } from '@iconify/tailwind'
 
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-	content: ["./web/ui/**/*.go"],
+export default {
+	content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
 		extend: {
 			fontFamily: {
-				riffic: ["Riffic", "cursive"]
+				riffic: ['Riffic', 'cursive', 'sans-serif']
 			}
 		}
 	},
-	plugins: [addDynamicIconSelectors(), require("tailwind-htmx")]
+	plugins: [addDynamicIconSelectors()]
 }
