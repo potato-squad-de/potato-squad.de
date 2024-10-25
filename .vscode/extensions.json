@@ -1,9 +1,10 @@
 {
 	"recommendations": [
+		"dbaeumer.vscode-eslint",
+		"esbenp.prettier-vscode",
 		"svelte.svelte-vscode",
-		"ardenivanov.svelte-intellisense",
 		"bradlc.vscode-tailwindcss",
 		"antfu.iconify",
-		"matthewpi.caddyfile-support"
+		"qwtel.sqlite-viewer"
 	]
 }
