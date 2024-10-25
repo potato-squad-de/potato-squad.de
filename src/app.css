@@ -14,16 +14,16 @@
 	}
 
 	:root {
-		--text: #eef4fc;
+		--text: #dfeefb;
 		--background: #99ccff;
-		--primary: #287cd9;
-		--secondary: #9992ec;
-		--accent: #785ae2;
+		--primary: #4d5d6d;
+		--secondary: #9d7bf1;
+		--accent: #a257ed;
 	}
 	.dark {
 		--background: #003366;
-		--primary: #267ad9;
-		--secondary: #1b136c;
-		--accent: #3a1da5;
+
+		--secondary: #300e86;
+		--accent: #5c11a6;
 	}
 }

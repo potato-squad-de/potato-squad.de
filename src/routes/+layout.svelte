@@ -2,6 +2,10 @@
 	import '../app.css'
 
 	let { children } = $props()
+
+	function toggleDarkMode() {
+		document.documentElement.classList.toggle('dark')
+	}
 </script>
 
 <svelte:head>
@@ -23,16 +27,20 @@
 			href="https://discord.gg/pHdZKq6mf9"
 			target="_blank"
 			rel="noopener noreferrer"
-			class="flex min-w-fit items-center gap-2 rounded-lg bg-[#7289da] p-2 font-riffic text-2xl uppercase transition duration-100 ease-in-out hover:bg-[#97a4d4]"
+			class="bg-secondary hover:bg-accent/50 flex min-w-fit items-center gap-2 rounded-lg p-2 font-riffic text-2xl uppercase drop-shadow transition duration-100 ease-in-out"
 		>
 			<span class="icon-[mdi--discord]"></span>
 			<span>Join</span>
 		</a>
 
 		<div
-			class="bg-secondary flex items-center gap-4 rounded-lg px-4 py-2 text-3xl font-bold"
+			class="bg-secondary flex items-center gap-4 rounded-lg px-4 py-2 text-3xl font-bold drop-shadow"
 		>
-			<button aria-label="dark mode" class="flex justify-items-center">
+			<button
+				aria-label="dark mode"
+				class="flex justify-items-center"
+				onclick={() => toggleDarkMode()}
+			>
 				<span
 					class="icon-[material-symbols--dark-mode] dark:icon-[material-symbols--light-mode]"
 				></span>

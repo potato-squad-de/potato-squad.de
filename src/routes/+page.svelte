@@ -1,11 +1,34 @@
 <script lang="ts">
+	import type { CardProps } from '$lib'
 	import Card from './Card.svelte'
 
-	const cards = [
-		{ name: 'Hurensohn 1', alias: 'Alpha Hurensohn' },
-		{ name: 'Hurensohn 2', alias: 'Beta Hurensohn' },
-		{ name: 'Hurensohn 3', alias: 'Gamma Hurensohn' },
-		{ name: 'Hurensohn 4', alias: 'Delta Hurensohn' }
+	const cards: CardProps[] = [
+		{
+			name: 'Hurensohn 1',
+			aliases: ['Alpha Hurensohn', 'Richtiger Kevin'],
+			bio: 'Id cillum culpa esse exercitation cillum commodo est sunt nostrud cillum aute magna quis. Eiusmod occaecat sit nulla ullamco minim cillum minim. Esse consequat pariatur sit cillum pariatur laborum dolore proident Lorem sint cillum ut. Exercitation consectetur elit eiusmod fugiat commodo.',
+			socials: [
+				{
+					platform: 'discord',
+					username: 'Kevin',
+					url: 'https://discord.gg/pHdZKq6mf9'
+				},
+				{
+					platform: 'github',
+					username: 'Kevin',
+					url: 'https://github.com/KevinHurensohn'
+				},
+				{
+					platform: 'twitter',
+					username: 'KevinHurensohn',
+					url: 'https://twitter.com/KevinHurensohn'
+				}
+			],
+			otherRefs: [{ name: 'Potato Squad', url: 'https://potato-squad.org' }]
+		},
+		{ name: 'Hurensohn 2', aliases: ['Beta Hurensohn'] },
+		{ name: 'Hurensohn 3' },
+		{ name: 'Hurensohn 4' }
 	]
 </script>
 
