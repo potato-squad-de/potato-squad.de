@@ -12,4 +12,18 @@
 		font-weight: bold;
 		font-style: bold;
 	}
+
+	:root {
+		--text: #eef4fc;
+		--background: #99ccff;
+		--primary: #287cd9;
+		--secondary: #9992ec;
+		--accent: #785ae2;
+	}
+	.dark {
+		--background: #003366;
+		--primary: #267ad9;
+		--secondary: #1b136c;
+		--accent: #3a1da5;
+	}
 }

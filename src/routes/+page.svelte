@@ -1,25 +1,20 @@
 <script lang="ts">
-	import { getRandomWebsite } from '$lib'
+	import Card from './Card.svelte'
+
+	const cards = [
+		{ name: 'Hurensohn 1', alias: 'Alpha Hurensohn' },
+		{ name: 'Hurensohn 2', alias: 'Beta Hurensohn' },
+		{ name: 'Hurensohn 3', alias: 'Gamma Hurensohn' },
+		{ name: 'Hurensohn 4', alias: 'Delta Hurensohn' }
+	]
 </script>
 
-<img src="/images/logo.png" alt="logo" />
+<div class="flex flex-col gap-4">
+	<h1 class="font-riffic text-5xl drop-shadow">Lore</h1>
 
-<div
-	class="flex flex-col items-center gap-4 font-riffic text-2xl uppercase text-white md:flex-row"
->
-	<a
-		href="https://discord.gg/pHdZKq6mf9"
-		target="_blank"
-		rel="noopener noreferrer"
-		class="flex min-w-fit items-center gap-2 rounded-lg bg-[#7289da] p-2 transition duration-100 ease-in-out hover:bg-[#97a4d4]"
-	>
-		<span class="icon-[mdi--discord]"></span>
-		<span>Join</span>
-	</a>
-	<button
-		on:click={() => window.open(getRandomWebsite(), '_blank')}
-		class="min-w-fit rounded-lg bg-[#4b0082] p-2 uppercase transition duration-100 ease-in-out hover:bg-[#7700ce]"
-	>
-		Traust dich eh nicht
-	</button>
+	<div class="flex flex-col gap-4">
+		{#each cards as card}
+			<Card {...card} />
+		{/each}
+	</div>
 </div>
