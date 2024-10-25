@@ -2,7 +2,7 @@
 	"recommendations": [
 		"dbaeumer.vscode-eslint",
 		"esbenp.prettier-vscode",
-		"svelte.svelte-vscode",
+		"1yib.svelte-bundle",
 		"bradlc.vscode-tailwindcss",
 		"antfu.iconify",
 		"qwtel.sqlite-viewer"
