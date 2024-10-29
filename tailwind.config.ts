@@ -1,4 +1,5 @@
 import { addDynamicIconSelectors } from '@iconify/tailwind'
+import typography from '@tailwindcss/typography'
 import type { Config } from 'tailwindcss'
 
 export default {
@@ -15,10 +16,24 @@ export default {
 				background: 'var(--background)',
 				primary: 'var(--primary)',
 				secondary: 'var(--secondary)',
-				accent: 'var(--accent)'
+				accent: 'var(--accent)',
+				discord: '#5765f2'
 			}
 		}
 	},
 
-	plugins: [addDynamicIconSelectors()]
+	safelist: [
+		'icon-[mdi--web]',
+		'icon-[logos--discord-icon]',
+		'icon-[logos--twitch]',
+		'icon-[logos--x]',
+		'icon-[logos--youtube-icon]',
+		'icon-[logos--tiktok-icon]',
+		'icon-[skill-icons--instagram]',
+		'icon-[logos--github-icon]',
+		'icon-[logos--spotify-icon]',
+		'icon-[logos--soundcloud]'
+	],
+
+	plugins: [typography(), addDynamicIconSelectors()]
 } as Config

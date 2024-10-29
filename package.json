@@ -4,6 +4,7 @@
     "type": "module",
     "private": true,
     "scripts": {
+        "postinstall": "bunx mkdirp data",
         "dev": "vite dev",
         "build": "vite build",
         "preview": "vite preview",
@@ -15,7 +16,7 @@
         "db:migrate": "drizzle-kit migrate",
         "db:studio": "drizzle-kit studio",
         "commitlint": "commitlint --edit $1",
-        "cleanup": "rimraf node_modules/ .svelte-kit/ build/"
+        "clean": "bunx rimraf node_modules/ .svelte-kit/ build/"
     },
     "devDependencies": {
         "@commitlint/cli": "^19.5.0",
@@ -25,6 +26,7 @@
         "@sveltejs/adapter-auto": "^3.0.0",
         "@sveltejs/kit": "^2.0.0",
         "@sveltejs/vite-plugin-svelte": "^4.0.0",
+        "@tailwindcss/typography": "^0.5.15",
         "@types/eslint": "^9.6.0",
         "autoprefixer": "^10.4.20",
         "drizzle-kit": "^0.22.0",
@@ -36,7 +38,6 @@
         "prettier": "^3.3.2",
         "prettier-plugin-svelte": "^3.2.6",
         "prettier-plugin-tailwindcss": "^0.6.5",
-        "rimraf": "^6.0.1",
         "svelte": "^5.0.0",
         "svelte-check": "^4.0.0",
         "tailwindcss": "^3.4.9",
