@@ -3,18 +3,7 @@
 		getDomainFromUrl,
 		getIconClassFromDomain
 	} from '$lib/domainIconClass'
-
-	interface Props {
-		displayName?: string
-		aliases?: string[]
-		bio?: string
-		avatarRef?: string
-		potatoAvatarRef?: string
-		links?: {
-			url: string
-			name: string
-		}[]
-	}
+	import type { User } from '$lib/users'
 
 	let {
 		displayName = 'Mysterious Potato',
@@ -66,7 +55,7 @@
 				url: 'https://soundcloud.com/eroshardstyle'
 			}
 		]
-	}: Props = $props()
+	}: User = $props()
 </script>
 
 <div
@@ -93,9 +82,11 @@
 		</div>
 	</div>
 
-	<div class="prosa-xs">
-		<p class="text-md">{bio}</p>
-	</div>
+	{#if bio}
+		<div>
+			<p class="text-md">{bio}</p>
+		</div>
+	{/if}
 
 	<div class="flex min-w-fit flex-col gap-2">
 		{#each links as link}
@@ -103,7 +94,7 @@
 				href={link.url}
 				target="_blank"
 				rel="noopener noreferrer"
-				class="flex flex-row items-center gap-4 rounded-xl bg-slate-100/10 p-2 sm:flex-row-reverse"
+				class="flex flex-row items-center gap-4 rounded-xl bg-slate-100/10 p-2 transition duration-300 ease-in-out hover:bg-slate-200/30 sm:flex-row-reverse"
 			>
 				<span
 					class={'size-4 ' + getIconClassFromDomain(getDomainFromUrl(link.url))}

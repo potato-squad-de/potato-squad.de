@@ -1,7 +1,6 @@
 <script lang="ts">
+	import { users } from '$lib/users'
 	import Card from './Card.svelte'
-
-	export let data
 </script>
 
 <div class="flex flex-col gap-8">

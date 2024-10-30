@@ -1,5 +1,4 @@
 import { addDynamicIconSelectors } from '@iconify/tailwind'
-import typography from '@tailwindcss/typography'
 import type { Config } from 'tailwindcss'
 
 export default {
@@ -32,8 +31,10 @@ export default {
 		'icon-[skill-icons--instagram]',
 		'icon-[logos--github-icon]',
 		'icon-[logos--spotify-icon]',
-		'icon-[logos--soundcloud]'
+		'icon-[logos--soundcloud]',
+		'icon-[logos--linkedin-icon]',
+		'icon-[logos--facebook]'
 	],
 
-	plugins: [typography(), addDynamicIconSelectors()]
+	plugins: [addDynamicIconSelectors()]
 } as Config

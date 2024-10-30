@@ -34,5 +34,9 @@ export function getIconClassFromDomain(domain: string) {
 			return 'icon-[logos--spotify-icon]'
 		case 'soundcloud.com':
 			return 'icon-[logos--soundcloud]'
+		case 'linkedin.com':
+			return 'icon-[logos--linkedin-icon]'
+		case 'facebook.com':
+			return 'icon-[logos--facebook]'
 	}
 }
