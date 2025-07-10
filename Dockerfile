@@ -1,8 +1,8 @@
-FROM oven/bun:latest AS builder
-WORKDIR /app
+FROM docker.io/hugomods/hugo:node AS builder
+WORKDIR /src
 COPY . .
-RUN bun install && bun run build
+RUN npm i && hugo
 
 FROM caddy:latest AS runner
-COPY --from=builder /app/build /srv
-ENTRYPOINT [ "caddy", "file-server", "--root", "/srv" ]
+COPY --from=builder /src/public /srv
+ENTRYPOINT ["caddy", "file-server" , "--root", "/srv"]

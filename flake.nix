@@ -1,32 +1,44 @@
 {
-  outputs = { self, nixpkgs }: 
-  let
-    system = "x86_64-linux";
-    pkgs = import nixpkgs { inherit system; };
-  in 
-  {
-    devShells.x86_64-linux.default = pkgs.mkShell {
-      buildInputs = with pkgs; [
-        bun
-      ];
+  outputs = {
+    self,
+    flake-utils,
+    nixpkgs,
+  }:
+    flake-utils.lib.eachDefaultSystem (system: let
+      pkgs = import nixpkgs {
+        inherit system;
+      };
+    in {
+      devShells.default = pkgs.mkShell {
+        packages = with pkgs; [
+          git
+          lefthook
+          commitlint-rs
+          just
 
-      shellHook = ''
-        if [ ! -f .envrc ]; then
-          echo "use flake" > .envrc && direnv allow
-        fi
+          hugo
+          nodejs
+          pnpm
+        ];
 
-        if [ ! -d node_modules ]; then
-          bun install
-        fi
+        shellHook = ''
+          if [ ! -d .git ]; then
+            git init && git add . && echo "chore: init" >.git/COMMIT_EDITMSG
 
-        if [ ! -f .env ]; then
-          cp .env.example .env
-        fi
-      '';
-    };
-  };
+            if [ -f lefthook.yaml ]; then
+              lefthook install
+            fi
+          fi
+
+          if [ ! -d node_modules ] && [ -f package.json ]; then
+            pnpm install
+          fi
+        '';
+      };
+    });
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    flake-utils.url = "github:numtide/flake-utils";
   };
 }

@@ -1,0 +1,15 @@
+@import "tailwindcss";
+@source "hugo_stats.json";
+
+@plugin "@iconify/tailwind4";
+
+@font-face {
+  src: url("/fonts/RifficFree-Bold.ttf") format("truetype");
+  font-family: "Riffic";
+  font-style: bold;
+  font-weight: bold;
+}
+
+@theme {
+  --font-riffic: "Riffic", sans-serif;
+}
