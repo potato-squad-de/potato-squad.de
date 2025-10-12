@@ -5,9 +5,25 @@
     nixpkgs,
   }:
     flake-utils.lib.eachDefaultSystem (system: let
-      pkgs = import nixpkgs {
-        inherit system;
-      };
+      pkgs = import nixpkgs {inherit system;};
+
+      hugoEnv = with pkgs; [
+        hugo
+        nodejs
+        pnpm
+      ];
+
+      goEnv = with pkgs; [
+        go
+        gopls
+        golangci-lint
+        go-tools
+        impl
+        wgo
+        delve
+
+        goose
+      ];
     in {
       devShells.default = pkgs.mkShell {
         packages = with pkgs; [
@@ -16,9 +32,9 @@
           commitlint-rs
           just
 
-          hugo
-          nodejs
-          pnpm
+          hugoEnv
+          goEnv
+          sqlite
         ];
 
         shellHook = ''
@@ -32,6 +48,10 @@
 
           if [ ! -d node_modules ] && [ -f package.json ]; then
             pnpm install
+          fi
+
+          if [ -f go.mod ]; then
+            go mod tidy
           fi
         '';
       };

@@ -1,5 +1,6 @@
 .direnv/
-
+data/
+tmp/
 ### Created by https://www.gitignore.io
 ### Hugo ###
 # Generated files by hugo
