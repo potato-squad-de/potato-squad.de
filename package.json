@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "@iconify/json": "^2.2.356",
+    "@iconify/json": "^2.2.394",
     "@iconify/tailwind4": "^1.0.6",
     "@tailwindcss/cli": "^4.1.11",
     "@tailwindcss/typography": "^0.5.18",
