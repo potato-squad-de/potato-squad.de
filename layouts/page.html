@@ -1,8 +1,24 @@
 {{ define "main" }}
 
-{{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }} {{
-$dateHuman := .Date | time.Format ":date_long" }}
-<time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+<body class="h-screen bg-[#99ccff] grid grid-rows-[auto_1fr]">
+    <header>
+        <p>potato-squad.de</p>
+    </header>
+    <main class="px-16 py-8">
 
-{{ .Content }} {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }} {{
-end }}
+<section class="prose-xl">
+<h1>{{ .Title}}</h1>
+{{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
+{{$dateHuman := .Date | time.Format ":date_long" }}
+<h2>
+            <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+            </h2>
+<article>
+
+{{ .Content }}
+
+</article>
+</section>
+    </main>
+</body>
+{{end }}
