@@ -3,7 +3,7 @@
     "@iconify/json": "^2.2.394",
     "@iconify/tailwind4": "^1.0.6",
     "@tailwindcss/cli": "^4.1.14",
-    "@tailwindcss/typography": "^0.5.18",
+    "@tailwindcss/typography": "^0.5.19",
     "htmx.org": "^2.0.7",
     "prettier": "^3.6.2",
     "prettier-plugin-go-template": "^0.0.15",
